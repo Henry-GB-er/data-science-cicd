@@ -27,7 +27,7 @@ jobs:
           pip install pytest # Ensure pytest is installed
 
       - name: Run Tests
-        run: pytest tests/ -v
+        run: pytest --maxfail=5 --disable-warnings -q # Run tests
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
